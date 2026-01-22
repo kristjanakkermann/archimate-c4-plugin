@@ -1,0 +1,51 @@
+{
+  "name": "@claude-plugins/archimate-c4",
+  "version": "0.1.0",
+  "description": "ArchiMate and C4 architectural modeling skills and agents for Claude Code - analyze, document, and visualize codebases",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint src --ext .ts",
+    "test": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "claude-code",
+    "claude-plugin",
+    "archimate",
+    "c4-model",
+    "architecture",
+    "documentation",
+    "diagrams",
+    "software-architecture",
+    "enterprise-architecture"
+  ],
+  "author": "",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "templates",
+    "claude-plugin.json"
+  ],
+  "dependencies": {
+    "typescript": "^5.3.0",
+    "yaml": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "eslint": "^8.55.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "vitest": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/archimate-c4-plugin"
+  }
+}

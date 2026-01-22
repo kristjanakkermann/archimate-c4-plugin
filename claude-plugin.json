@@ -1,0 +1,49 @@
+{
+  "$schema": "https://claude.ai/schemas/claude-plugin.json",
+  "name": "archimate-c4",
+  "displayName": "ArchiMate & C4 Architecture",
+  "version": "0.1.0",
+  "description": "Analyze, document, and visualize software architecture using ArchiMate and C4 models. Generate diagrams from existing codebases or design new systems.",
+  "author": "Architecture Tools",
+  "skills": [
+    {
+      "name": "c4-diagram",
+      "command": "c4",
+      "description": "Generate C4 model diagrams (Context, Container, Component, Code) for your codebase or design",
+      "entrypoint": "dist/skills/c4-skill.js"
+    },
+    {
+      "name": "archimate-diagram",
+      "command": "archimate",
+      "description": "Generate ArchiMate enterprise architecture diagrams with business, application, and technology layers",
+      "entrypoint": "dist/skills/archimate-skill.js"
+    },
+    {
+      "name": "architecture-analyze",
+      "command": "arch-analyze",
+      "description": "Analyze codebase structure and generate architecture documentation with diagrams",
+      "entrypoint": "dist/skills/analyze-skill.js"
+    },
+    {
+      "name": "architecture-plan",
+      "command": "arch-plan",
+      "description": "Create architectural decision records (ADRs) and design documents with visual diagrams",
+      "entrypoint": "dist/skills/plan-skill.js"
+    },
+    {
+      "name": "artifact-registry",
+      "command": "arch-registry",
+      "description": "Manage persistent architectural artifacts - list, show, export, and sync artifacts with unique URN identifiers",
+      "entrypoint": "dist/skills/registry-skill.js"
+    }
+  ],
+  "agents": [
+    {
+      "name": "architecture-documenter",
+      "description": "Autonomous agent that explores a codebase and generates comprehensive architectural documentation with C4 and ArchiMate diagrams",
+      "entrypoint": "dist/agents/documenter-agent.js"
+    }
+  ],
+  "categories": ["documentation", "architecture", "visualization", "planning"],
+  "tags": ["c4", "archimate", "diagrams", "software-architecture", "enterprise-architecture", "documentation"]
+}
