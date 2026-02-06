@@ -1,0 +1,53 @@
+%% Product Boundaries for Containers
+%% Source: ARIS ArchiMate 3 model "Product boundaries"
+%% Description: Shows IT Product boundaries, application components,
+%%   and information exchange flows through an API Gateway
+%%
+%% Render with beautiful-mermaid for best results:
+%%   import { renderMermaid } from 'beautiful-mermaid'
+%%   const svg = await renderMermaid(diagram, { bg: '#1a1b26', fg: '#a9b1d6' })
+
+graph TB
+
+    %% ── Styling ──────────────────────────────────────────────
+    classDef product fill:#FFFFB5,stroke:#C9A64D,color:#000,stroke-width:2px
+    classDef app fill:#B5FFFF,stroke:#438DD5,color:#000,stroke-width:2px
+    classDef api fill:#85BBF0,stroke:#5D99C6,color:#000,stroke-width:1px
+    classDef gateway fill:#E8D5F5,stroke:#9673B9,color:#000,stroke-width:2px
+    classDef route fill:#D4C4E3,stroke:#7B6B8A,color:#000,stroke-width:1px
+
+    %% ── IT Product A ────────────────────────────────────────
+    subgraph product_a["IT Product A"]
+        subgraph app_a["Application A"]
+            a_api["Application A-API"]:::api
+        end
+    end
+
+    %% ── API Gateway ─────────────────────────────────────────
+    subgraph api_gw["API xxx GW"]
+        a_route["App A route in GW"]:::route
+        b_route["App B route in GW"]:::route
+    end
+
+    %% ── IT Product B ────────────────────────────────────────
+    subgraph product_b["IT Product B"]
+        subgraph app_b["Application B"]
+            b_api["Application B-API"]:::api
+        end
+    end
+
+    %% ── Information Exchange Flows ──────────────────────────
+    %% A calling B (via GW)
+    a_api -- "exchanges info" --> b_route
+    b_route -- "exchanges info" --> b_api
+
+    %% B calling A (via GW)
+    b_api -- "exchanges info" --> a_route
+    a_route -- "exchanges info" --> a_api
+
+    %% ── Subgraph Styling ────────────────────────────────────
+    style product_a fill:#FFFFB5,stroke:#C9A64D,color:#000,stroke-width:2px
+    style product_b fill:#FFFFB5,stroke:#C9A64D,color:#000,stroke-width:2px
+    style app_a fill:#B5FFFF,stroke:#438DD5,color:#000,stroke-width:2px
+    style app_b fill:#B5FFFF,stroke:#438DD5,color:#000,stroke-width:2px
+    style api_gw fill:#E8D5F5,stroke:#9673B9,color:#000,stroke-width:2px
