@@ -1,53 +1,49 @@
 %% Product Boundaries for Containers
 %% Source: ARIS ArchiMate 3 model "Product boundaries"
-%% Description: Shows IT Product boundaries, application components,
-%%   and information exchange flows through an API Gateway
+%% Description: Product boundaries showing Software Systems, Containers,
+%%   and bidirectional information exchange via a shared API Gateway.
+%%   Layout: three columns (Product A | GW | Product B), two flow lanes.
 %%
-%% Render with beautiful-mermaid for best results:
+%% Render with beautiful-mermaid:
 %%   import { renderMermaid } from 'beautiful-mermaid'
 %%   const svg = await renderMermaid(diagram, { bg: '#1a1b26', fg: '#a9b1d6' })
 
-graph TB
+graph LR
 
-    %% ── Styling ──────────────────────────────────────────────
-    classDef product fill:#FFFFB5,stroke:#C9A64D,color:#000,stroke-width:2px
-    classDef app fill:#B5FFFF,stroke:#438DD5,color:#000,stroke-width:2px
-    classDef api fill:#85BBF0,stroke:#5D99C6,color:#000,stroke-width:1px
-    classDef gateway fill:#E8D5F5,stroke:#9673B9,color:#000,stroke-width:2px
-    classDef route fill:#D4C4E3,stroke:#7B6B8A,color:#000,stroke-width:1px
+    %% ── Styling ─────────────────────────────────────────
+    classDef container fill:#438DD5,stroke:#2E6295,color:#FFF,stroke-width:1px,rx:4,ry:4
 
-    %% ── IT Product A ────────────────────────────────────────
-    subgraph product_a["IT Product A"]
-        subgraph app_a["Application A"]
-            a_api["Application A-API"]:::api
+    %% ── IT Product A (left column) ──────────────────────
+    subgraph product_a[" IT Product A "]
+        subgraph app_a["Application A\n[Software System]"]
+            a_api["Application A-API\n[Container]"]:::container
         end
     end
 
-    %% ── API Gateway ─────────────────────────────────────────
-    subgraph api_gw["API xxx GW"]
-        a_route["App A route in GW"]:::route
-        b_route["App B route in GW"]:::route
+    %% ── API Gateway (center column) ─────────────────────
+    subgraph api_gw["API xxx GW\n[Software System]"]
+        b_route["App B route in GW\n[Container]"]:::container
+        a_route["App A route in GW\n[Container]"]:::container
     end
 
-    %% ── IT Product B ────────────────────────────────────────
-    subgraph product_b["IT Product B"]
-        subgraph app_b["Application B"]
-            b_api["Application B-API"]:::api
+    %% ── IT Product B (right column) ─────────────────────
+    subgraph product_b[" IT Product B "]
+        subgraph app_b["Application B\n[Software System]"]
+            b_api["Application B-API\n[Container]"]:::container
         end
     end
 
-    %% ── Information Exchange Flows ──────────────────────────
-    %% A calling B (via GW)
-    a_api -- "exchanges info" --> b_route
-    b_route -- "exchanges info" --> b_api
+    %% ── Top lane: A calls B (left → right) ──────────────
+    a_api -. "exchanges info" .-> b_route
+    b_route -. "exchanges info" .-> b_api
 
-    %% B calling A (via GW)
-    b_api -- "exchanges info" --> a_route
-    a_route -- "exchanges info" --> a_api
+    %% ── Bottom lane: B calls A (right → left) ───────────
+    b_api -. "exchanges info" .-> a_route
+    a_route -. "exchanges info" .-> a_api
 
-    %% ── Subgraph Styling ────────────────────────────────────
-    style product_a fill:#FFFFB5,stroke:#C9A64D,color:#000,stroke-width:2px
-    style product_b fill:#FFFFB5,stroke:#C9A64D,color:#000,stroke-width:2px
-    style app_a fill:#B5FFFF,stroke:#438DD5,color:#000,stroke-width:2px
-    style app_b fill:#B5FFFF,stroke:#438DD5,color:#000,stroke-width:2px
-    style api_gw fill:#E8D5F5,stroke:#9673B9,color:#000,stroke-width:2px
+    %% ── Subgraph Styling ────────────────────────────────
+    style product_a fill:#FFF9E6,stroke:#C9A64D,color:#333,stroke-width:3px
+    style product_b fill:#FFF9E6,stroke:#C9A64D,color:#333,stroke-width:3px
+    style app_a fill:#E1F0FF,stroke:#1168BD,color:#333,stroke-width:2px
+    style app_b fill:#E1F0FF,stroke:#1168BD,color:#333,stroke-width:2px
+    style api_gw fill:#E1F0FF,stroke:#1168BD,color:#333,stroke-width:2px
