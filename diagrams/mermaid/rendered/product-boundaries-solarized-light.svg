@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1518.21 324" width="1518.21" height="324" style="--bg:#fdf6e3;--fg:#657b83;--line:#93a1a1;--accent:#268bd2;--muted:#93a1a1;background:var(--bg)">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 30%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="4.8" refX="8" refY="2.4" orient="auto">
+    <polygon points="0 0, 8 2.4, 0 4.8" fill="var(--_arrow)" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="4.8" refX="0" refY="2.4" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.4, 8 4.8" fill="var(--_arrow)" />
+  </marker>
+</defs>
+<rect x="48" y="48" width="327.35" height="228" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+<rect x="48" y="48" width="327.35" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+<text x="60" y="62" dy="0.35em" font-size="12" font-weight="600" fill="var(--_text-sec)">IT Product A</text>
+<rect x="70" y="84" width="283.35" height="172" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+<rect x="70" y="84" width="283.35" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+<text x="82" y="98" dy="0.35em" font-size="12" font-weight="600" fill="var(--_text-sec)">Application A · Software System</text>
+<rect x="595.4300000000001" y="83" width="327.35" height="184" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+<rect x="595.4300000000001" y="83" width="327.35" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+<text x="607.4300000000001" y="97" dy="0.35em" font-size="12" font-weight="600" fill="var(--_text-sec)">API xxx GW · Software System</text>
+<rect x="1142.8600000000001" y="48" width="327.3499999999999" height="228" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+<rect x="1142.8600000000001" y="48" width="327.3499999999999" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+<text x="1154.8600000000001" y="62" dy="0.35em" font-size="12" font-weight="600" fill="var(--_text-sec)">IT Product B</text>
+<rect x="1164.8600000000001" y="84" width="283.3499999999999" height="172" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+<rect x="1164.8600000000001" y="84" width="283.3499999999999" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+<text x="1176.8600000000001" y="98" dy="0.35em" font-size="12" font-weight="600" fill="var(--_text-sec)">Application B · Software System</text>
+<polyline points="331.35,193 353.35,193 353.35,161 639.4300000000001,161" fill="none" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline points="331.35,193 353.35,193 353.35,225 639.4300000000001,225" fill="none" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline points="878.78,161 1306.535,161 1306.535,175" fill="none" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline points="878.78,225 1306.535,225 1306.535,211" fill="none" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<rect x="437.35" y="147.5" width="96.08" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="485.39000000000004" y="161" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">exchanges info</text>
+<rect x="437.35" y="211.5" width="96.08" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="485.39000000000004" y="225" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">exchanges info</text>
+<rect x="984.7800000000002" y="147.5" width="96.08" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="1032.8200000000002" y="161" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">exchanges info</text>
+<rect x="984.7800000000002" y="211.5" width="96.08" height="27" rx="4" ry="4" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="1032.8200000000002" y="225" text-anchor="middle" dy="0.35em" font-size="11" font-weight="400" fill="var(--_text-muted)">exchanges info</text>
+<rect x="92" y="175" width="239.35000000000002" height="36" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<rect x="639.4300000000001" y="143" width="239.35000000000002" height="36" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<rect x="639.4300000000001" y="207" width="239.35000000000002" height="36" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<rect x="1186.8600000000001" y="175" width="239.35000000000002" height="36" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+<text x="211.675" y="193" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">Application A-API · Container</text>
+<text x="759.105" y="161" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">App B route in GW · Container</text>
+<text x="759.105" y="225" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">App A route in GW · Container</text>
+<text x="1306.535" y="193" text-anchor="middle" dy="0.35em" font-size="13" font-weight="500" fill="var(--_text)">Application B-API · Container</text>
+</svg>
