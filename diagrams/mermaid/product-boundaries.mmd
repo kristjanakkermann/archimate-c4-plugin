@@ -1,49 +1,31 @@
 %% Product Boundaries for Containers
 %% Source: ARIS ArchiMate 3 model "Product boundaries"
-%% Description: Product boundaries showing Software Systems, Containers,
-%%   and bidirectional information exchange via a shared API Gateway.
-%%   Layout: three columns (Product A | GW | Product B), two flow lanes.
+%% Render: npx tsx diagrams/mermaid/render-product-boundaries.ts
 %%
-%% Render with beautiful-mermaid:
-%%   import { renderMermaid } from 'beautiful-mermaid'
-%%   const svg = await renderMermaid(diagram, { bg: '#1a1b26', fg: '#a9b1d6' })
+%% Flow paths through the API Gateway:
+%%   A calls B: Application A-API -> App B route in GW -> Application B-API
+%%   B calls A: Application B-API -> App A route in GW -> Application A-API
 
 graph LR
 
-    %% ── Styling ─────────────────────────────────────────
-    classDef container fill:#438DD5,stroke:#2E6295,color:#FFF,stroke-width:1px,rx:4,ry:4
-
-    %% ── IT Product A (left column) ──────────────────────
-    subgraph product_a[" IT Product A "]
-        subgraph app_a["Application A\n[Software System]"]
-            a_api["Application A-API\n[Container]"]:::container
+    subgraph product_a[IT Product A]
+        subgraph app_a[Application A · Software System]
+            a_api[Application A-API · Container]
         end
     end
 
-    %% ── API Gateway (center column) ─────────────────────
-    subgraph api_gw["API xxx GW\n[Software System]"]
-        b_route["App B route in GW\n[Container]"]:::container
-        a_route["App A route in GW\n[Container]"]:::container
+    subgraph api_gw[API xxx GW · Software System]
+        b_route[App B route in GW · Container]
+        a_route[App A route in GW · Container]
     end
 
-    %% ── IT Product B (right column) ─────────────────────
-    subgraph product_b[" IT Product B "]
-        subgraph app_b["Application B\n[Software System]"]
-            b_api["Application B-API\n[Container]"]:::container
+    subgraph product_b[IT Product B]
+        subgraph app_b[Application B · Software System]
+            b_api[Application B-API · Container]
         end
     end
 
-    %% ── Top lane: A calls B (left → right) ──────────────
-    a_api -. "exchanges info" .-> b_route
-    b_route -. "exchanges info" .-> b_api
-
-    %% ── Bottom lane: B calls A (right → left) ───────────
-    b_api -. "exchanges info" .-> a_route
-    a_route -. "exchanges info" .-> a_api
-
-    %% ── Subgraph Styling ────────────────────────────────
-    style product_a fill:#FFF9E6,stroke:#C9A64D,color:#333,stroke-width:3px
-    style product_b fill:#FFF9E6,stroke:#C9A64D,color:#333,stroke-width:3px
-    style app_a fill:#E1F0FF,stroke:#1168BD,color:#333,stroke-width:2px
-    style app_b fill:#E1F0FF,stroke:#1168BD,color:#333,stroke-width:2px
-    style api_gw fill:#E1F0FF,stroke:#1168BD,color:#333,stroke-width:2px
+    a_api -.->|exchanges info| b_route
+    a_api -.->|exchanges info| a_route
+    b_route -.->|exchanges info| b_api
+    a_route -.->|exchanges info| b_api
